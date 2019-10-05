@@ -26,8 +26,8 @@ public class XMLWriterDOM {
             document.appendChild(rootElement);
 
             //append child element to root element
-            rootElement.appendChild(getEmployee(document, "1", "Dmitry", "40", "Java Developer", "Male"));
-            rootElement.appendChild(getEmployee(document, "2", "Rezida", "36", "FrontEnd Developer", "Female"));
+            rootElement.appendChild(getEmployee(document, "1", "Dmitry", "40", "Java Developer", "Male", "1234"));
+            rootElement.appendChild(getEmployee(document, "2", "Rezida", "36", "FrontEnd Developer", "Female", "4321"));
 
             //for output to file, console
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -52,7 +52,8 @@ public class XMLWriterDOM {
 
     private static Node getEmployee(Document doc, String id,
                                     String name, String age,
-                                    String role, String gender) {
+                                    String role, String gender,
+                                    String tNumber) {
 
         Element employee = doc.createElement("Employee");
         employee.setAttribute("id", id);
@@ -60,6 +61,7 @@ public class XMLWriterDOM {
         employee.appendChild(getEmployeeElements(doc, employee, "age", age));
         employee.appendChild(getEmployeeElements(doc, employee, "role", role));
         employee.appendChild(getEmployeeElements(doc, employee, "gender", gender));
+        employee.appendChild(getEmployeeElements(doc, employee, "tNumber", tNumber));
 
         return employee;
     }

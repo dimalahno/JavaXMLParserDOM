@@ -5,6 +5,7 @@ public class Employee {
     private String gender;
     private int age;
     private String role;
+    private String tNumber;
 
     public String getName() {
         return name;
@@ -37,12 +38,22 @@ public class Employee {
     public void setRole(String role) {
         this.role = role;
     }
+    
 
-    @Override
+    public String gettNumber() {
+		return tNumber;
+	}
+
+	public void settNumber(String tNumber) {
+		this.tNumber = tNumber;
+	}
+
+	@Override
     public String toString() {
         return "Employee:: Name=" + this.name
                 + " Age=" + this.age
                 + " Gender=" + this.gender
-                + " Role=" + this.role;
+                + " Role=" + this.role
+        		+ " Telephone number=" + this.tNumber;
     }
 }

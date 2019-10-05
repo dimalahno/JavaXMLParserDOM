@@ -52,6 +52,7 @@ public class XMLReaderDOM {
             employee.setName(getTagValue("name", element));
             employee.setGender(getTagValue("gender", element));
             employee.setRole(getTagValue("role", element));
+            employee.settNumber(getTagValue("tNumber", element));
         }
         return employee;
     }
